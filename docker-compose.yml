@@ -1,0 +1,36 @@
+version: '2'
+services:
+
+  api:
+    build: ./api
+    container_name: scrpl_api
+    restart: always
+    volumes:
+      - "./api:/api"
+      - "./config:/api/config"
+      - "./models:/api/src/models"
+      - "./services:/api/src/services"
+      - "/api/node_modules"
+    ports:
+      - 9000:9000
+
+  webapp:
+    build: ./webapp
+    container_name: scrpl_webapp
+    restart: always
+    volumes:
+      - "./webapp:/webapp"
+      - "/webapp/node_modules"
+    ports:
+      - 8080:8080
+      - 35729:35729
+
+  worker:
+    build: ./worker
+    container_name: scrpl_worker
+    volumes:
+      - "./worker:/worker"
+      - "./config:/worker/config"
+      - "./models:/worker/src/models"
+      - "./services:/worker/src/services"
+      - "/worker/node_modules"
