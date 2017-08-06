@@ -3,19 +3,42 @@
     <router-view></router-view>
   </div>
 </template>
-
 <script>
-export default {
-  name: 'app',
-}
-</script>
+  /* ============
+   * Entry Point
+   * ============
+   *
+   * The entry point of the application
+   */
 
-<style>
-#app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-</style>
+  // import store from './store';
+  // import { router, i18n } from './bootstrap'
+  import { i18n } from './bootstrap'
+  // import accountService from './services/account';
+
+  export default {
+    /**
+     * The Vuex store
+     */
+    // store,
+
+    /**
+     * The router
+     */
+    // router,
+
+    /**
+     * The localization plugin
+     */
+    i18n,
+
+    /**
+     * Fires when the app has been mounted
+     */
+    // mounted() {
+      // If the user is authenticated,
+      // fetch the data from the API
+      // this.$store.state.auth.authenticated
+    // },
+  }
+</script>
