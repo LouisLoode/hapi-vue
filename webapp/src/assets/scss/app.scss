@@ -1,0 +1,35 @@
+//
+// Base
+//
+@import '~normalize.css/normalize.css';
+@import '~bootstrap/dist/css/bootstrap.min.css';
+@import './vendors/parsleyjs/parsleyjs.scss';
+
+
+html, body {
+    height: 100%;
+}
+
+.form-group {
+    margin-bottom: 2rem;
+}
+
+.h1, h1 {
+    margin-bottom: 2rem;
+}
+
+
+/* show border around full height container */
+.h-100 {
+    height: 100vh !important;
+}
+
+.parsley-errors-list{
+  position: absolute;
+  background: #FFFFFF;
+  padding: 4px 8px;
+  top: 2rem;
+  width: 100%;
+  text-align: right;
+  margin-bottom: 15px;
+}

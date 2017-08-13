@@ -3,7 +3,7 @@ services:
 
   rabbitmq:
     image: rabbitmq:3-management
-    container_name: scrpl_rabbit
+    container_name: hv_rabbit
     restart: always
     environment:
       - RABBITMQ_DEFAULT_USER=guest
@@ -11,10 +11,14 @@ services:
     ports:
       - 15672:15672
       - 5672:5672
+    volumes:
+    - './bin/enabled_plugins:/etc/rabbitmq/enabled_plugins'
+    - './bin/rabbitmqadmin:/usr/local/bin'
+
 
   mongodb:
     image: mongo:3.0.2
-    container_name: scrpl_mongo
+    container_name: hv_mongo
     restart: always
     volumes:
       - "../mongo_data:/data/db"
@@ -65,4 +69,5 @@ services:
     depends_on:
       - rabbitmq
       - api
+      - worker
       - mongodb

@@ -6,7 +6,7 @@
     "ecmaFeatures": {
       "modules": true
     },
-    "extends": "hapi",
+    "extends": "eslint-config-hapi",
     "parserOptions": {
       "ecmaVersion": 6,
       "sourceType": "module"
@@ -15,7 +15,7 @@
       "_": true
     },
     "rules": {
-      "object-shorthand": ["error", "properties"],
+      "object-shorthand": "off",
       "camelcase": "off",
       "consistent-return": "off",
       "vars-on-top": "off",
@@ -31,14 +31,14 @@
       "no-regex-spaces": "off",
       "no-catch-shadow": "off",
       "no-lonely-if": "off",
-      "brace-style": ["warn", "stroustrup"],
+      "brace-style": ["warn", "1tbs"],
       "no-shadow": ["warn", { "allow": ["err", "done"] }],
       "no-unused-vars": ["warn", { "vars": "all", "varsIgnorePattern": "^internals$", "args": "none" }],
       "one-var": ["error", "never"],
       "handle-callback-err": ["error", "^(e|err|error)$"],
       "hapi/hapi-capitalize-modules": ["warn", "global-scope-only"],
       "hapi/hapi-for-you": ["warn", { "maxDepth": 3, "startIterator": "i" }],
-      "hapi/hapi-scope-start": "warn",
+      "hapi/hapi-scope-start": "off",
       "array-bracket-spacing": "warn",
       "dot-notation": "warn",
       "eol-last": "warn",
@@ -61,7 +61,7 @@
       "no-spaced-func": "error",
       "no-mixed-spaces-and-tabs": "error",
       "keyword-spacing": ["error", { "before": true, "after": true }],
-      "semi": ["error", "always"],
+      "semi": ["error", "never"],
       "semi-spacing": ["error", { "before": false, "after": true }],
       "space-infix-ops": "error",
       "space-unary-ops": ["warn", { "words": true, "nonwords": false }],
@@ -72,13 +72,19 @@
       "no-else-return": "error",
       "no-return-assign": "error",
       "no-new-wrappers": "error",
-      "comma-dangle": ["error", "never"],
+      "comma-dangle": ["error", {
+        "arrays": "ignore",
+        "objects": "ignore",
+        "imports": "never",
+        "exports": "never",
+        "functions": "ignore"
+      }],
       "no-sparse-arrays": "error",
       "no-ex-assign": "error",
       "no-var": "error",
       "prefer-arrow-callback": "error",
       "prefer-const": "error",
-      "indent": ["error", 4, { "SwitchCase": 1 }],
+      "indent": ["error", 2, { "SwitchCase": 1 }],
       "space-before-function-paren": ["error", { "anonymous": "always", "named": "never" }],
       "func-style": ["error", "expression"],
       "object-curly-spacing": ["error", "always"],

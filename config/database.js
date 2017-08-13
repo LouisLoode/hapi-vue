@@ -1,40 +1,32 @@
-const Mongoose = require('mongoose');
-// import BlueBird from 'bluebird';
-const Config = require('./config');
+const Mongoose = require('mongoose')
+// import BlueBird from 'bluebird'
+const Config = require('./config')
 
-// console.log(Config.mongodb);
+// console.log(Config.mongodb)
 
 // connect mongo
-Mongoose.Promise = global.Promise;
-// Mongoose.Promise = BlueBird;
-Mongoose.connect(Config.mongodb);
+Mongoose.Promise = global.Promise
+// Mongoose.Promise = BlueBird
+Mongoose.connect(Config.mongodb)
 
 // When successfully connected
 Mongoose.connection.on('connected', () => {
-
-    console.log('Mongoose default connection open to ' + Config.mongodb);
-
-});
+  console.log('Mongoose default connection open to ' + Config.mongodb)
+})
 
 // If the connection throws an error
 Mongoose.connection.on('error', (err) => {
-
-    console.log('Mongoose default connection error: ' + err);
-
-});
+  console.log('Mongoose default connection error: ' + err)
+})
 
 // When the connection is disconnected
 Mongoose.connection.on('disconnected', () => {
-
-    console.log('Mongoose default connection disconnected');
-
-});
+  console.log('Mongoose default connection disconnected')
+})
 
 // When the connection is open
 Mongoose.connection.on('openUri', () => {
+  console.log('Mongoose default connection is open')
+})
 
-    console.log('Mongoose default connection is open');
-
-});
-
-module.exports = Mongoose;
+module.exports = Mongoose

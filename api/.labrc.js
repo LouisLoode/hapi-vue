@@ -1,5 +1,5 @@
 module.exports = {
-    coverage: true,
-    threshold: 80,
-    lint: true
+  coverage: true,
+  threshold: 80,
+  lint: true
 };

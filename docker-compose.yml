@@ -3,7 +3,7 @@ services:
 
   api:
     build: ./api
-    container_name: scrpl_api
+    container_name: hv_api
     restart: always
     volumes:
       - "./api:/api"
@@ -16,7 +16,7 @@ services:
 
   webapp:
     build: ./webapp
-    container_name: scrpl_webapp
+    container_name: hv_webapp
     restart: always
     volumes:
       - "./webapp:/webapp"
@@ -27,7 +27,7 @@ services:
 
   worker:
     build: ./worker
-    container_name: scrpl_worker
+    container_name: hv_worker
     volumes:
       - "./worker:/worker"
       - "./config:/worker/config"

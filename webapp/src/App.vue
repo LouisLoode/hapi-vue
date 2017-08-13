@@ -11,21 +11,20 @@
    * The entry point of the application
    */
 
-  // import store from './store';
-  // import { router, i18n } from './bootstrap'
-  import { i18n } from './bootstrap'
-  // import accountService from './services/account';
+  import store from './store';
+  import { router, i18n } from './bootstrap';
+  import accountService from './services/account';
 
   export default {
     /**
      * The Vuex store
      */
-    // store,
+    store,
 
     /**
      * The router
      */
-    // router,
+    router,
 
     /**
      * The localization plugin
@@ -35,10 +34,12 @@
     /**
      * Fires when the app has been mounted
      */
-    // mounted() {
+    mounted() {
       // If the user is authenticated,
       // fetch the data from the API
-      // this.$store.state.auth.authenticated
-    // },
-  }
+      if (this.$store.state.auth.authenticated) {
+        accountService.find();
+      }
+    },
+  };
 </script>
